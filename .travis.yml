@@ -1,6 +1,3 @@
-stages:
-   - buildResumeGeneratorServer
-
 #TODO add vue build stage
 
 language: java
@@ -8,13 +5,11 @@ language: java
 jdk:
   openjdk11
 
-jobs:
-  include:
-    - stage: buildResumeGeneratorServer
-    - before_script:
-      cd ./resume-generator-server
-    - install:
-      - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+before_install:
+  - cd ./resume-generator-server
+  - chmod +x mvnw
+install:
+  - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
