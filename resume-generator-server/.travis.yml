@@ -1,0 +1,13 @@
+stages:
+   - build
+
+lanauage: java
+
+jdk:
+  openjdk11
+
+install:
+  - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
