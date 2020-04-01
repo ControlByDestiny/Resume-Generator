@@ -8,11 +8,10 @@ language: java
 jdk:
   openjdk11
 
-buildResumeGeneratorServer:
-  stage: buildResumeGeneratorServer
-  before_script:
+stage: buildResumeGeneratorServer
+  before_install:
     cd ./resume-generator-server
-  script:
+  install:
     mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
 
 after_success:
