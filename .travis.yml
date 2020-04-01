@@ -6,9 +6,10 @@ jdk:
   openjdk11
 
 before_install:
-  cd ./resume-generator-server
+  - cd ./resume-generator-server
+  - chmod +x mvnw
 install:
-  mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+  - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
