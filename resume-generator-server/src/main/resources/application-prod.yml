@@ -1,0 +1,5 @@
+server:
+  port: 8081
+swagger:
+  enable: true
+  version: 1.0.0

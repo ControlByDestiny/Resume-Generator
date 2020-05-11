@@ -5,7 +5,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan( basePackages = {"com.icodingman.resume.controllers"})
 public class ResumeGeneratorServerApplication {
 
     public static void main(String[] args) {
