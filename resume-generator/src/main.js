@@ -2,10 +2,12 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Vuex from 'vuex'
 import VueI18n from 'vue-i18n'
-
+import ViewUI from 'view-design'
+import 'view-design/dist/styles/iview.css'
 import App from '@/views/App/index.vue'
 import routes from './rootRoutes'
 import data from './data'
+import axios from 'axios'
 
 Vue.config.productionTip = false
 
@@ -36,6 +38,11 @@ router.beforeEach((to, from, next) => {
 Vue.use(Vuex)
 
 const store = new Vuex.Store(data)
+
+Vue.use(ViewUI)
+
+axios.defaults.baseURL = process.env.VUE_APP_BASE_URL
+axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*'
 
 new Vue({
   router,
