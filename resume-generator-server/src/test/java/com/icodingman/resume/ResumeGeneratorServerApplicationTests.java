@@ -8,6 +8,7 @@ class ResumeGeneratorServerApplicationTests {
 
     @Test
     void contextLoads() {
+        System.out.println("张晓阳SB！！！");
     }
 
 }
